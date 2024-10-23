@@ -1,0 +1,317 @@
+<!DOCTYPE html>        
+<html lang="zh-CN">        
+<head>        
+    <meta charset="UTF-8">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <title>视障人群无障碍出行项目</title>        
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">        
+    <style>        
+        /* 自定义样式可以在这里添加 */        
+        .hero {        
+            background-image: url('images/3.jpeg');        
+            background-size: cover;        
+            background-position: center;        
+            height: 400px;        
+            color: white;        
+            display: flex;        
+            align-items: center;        
+            justify-content: center;        
+            text-align: center;        
+            flex-direction: column;        
+        }        
+        .hero h1 {        
+            font-size: 3rem;        
+            font-weight: bold;        
+        }        
+        .hero p {        
+            font-size: 1.5rem;        
+        }        
+        /* 添加一个滚动到指定元素的平滑过渡效果 */      
+        html {      
+            scroll-behavior: smooth;      
+        }      
+        /* 自定义下拉菜单的样式 */    
+        .caret-down {    
+            display: inline-block;    
+            width: 0;    
+            height: 0;    
+            margin-left: 2px;    
+            vertical-align: middle;    
+            border-top: 4px solid;    
+            border-right: 4px solid transparent;    
+            border-left: 4px solid transparent;    
+        }    
+        .dropdown-menu {  
+            display: none;  
+        }  
+        .dropdown-menu.active {  
+            display: block;  
+        }  
+
+        /* 设置所有h2标签的样式 */  
+        h2 {  
+            font-family: 'Arial', sans-serif; /* 字体 */  
+            font-size: 2.5rem; /* 字号 */  
+            color: #333; /* 字体颜色 */  
+            text-align: center; /* 对齐方式 */  
+            margin-bottom: 2rem; /* 下边距 */  
+        }  
+  
+        /* 设置所有h3标签的样式 */  
+        h3 {  
+            font-family: 'Georgia', serif; /* 字体 */  
+            font-size: 1.75rem; /* 字号 */  
+            color: #555; /* 字体颜色 */  
+            text-align: left; /* 对齐方式，这里改为左对齐，你可以根据需要调整 */  
+            margin-top: 1rem; /* 上边距 */  
+            margin-bottom: 0.5rem; /* 下边距 */  
+        }  
+        
+        /* 设置所有h4标签的样式 */  
+        h4 {  
+            font-family: 'Arial', sans-serif; /* 字体 */  
+            font-size: 1.75rem; /* 字号 */  
+            color: #333; /* 字体颜色 */  
+            text-align: left; /* 对齐方式 */  
+            margin-bottom: 2rem; /* 下边距 */  
+        }  
+
+        /* 设置所有h5标签的样式 */  
+        h5 {  
+            font-family: 'Georgia', serif; /* 字体 */  
+            font-size: 1.30rem; /* 字号 */  
+            color: #1f1d1d; /* 字体颜色 */  
+            text-align: left; /* 对齐方式，这里改为左对齐，你可以根据需要调整 */  
+            margin-top: 1rem; /* 上边距 */  
+            margin-bottom: 0.5rem; /* 下边距 */  
+        }  
+  
+        /* 额外的样式，用于容器和背景等 */  
+        .container {  
+            max-width: 800px; /* 最大宽度 */  
+            margin: 0 auto; /* 水平居中 */  
+        }  
+  
+        .bg-gray-100 {  
+            background-color: #f5f5f5; /* 背景颜色 */  
+        }  
+
+        #problems-faced {  
+            width: 105%;  
+            margin: 0; /* 移除原有的边距 */  
+            padding: 20px;  
+            box-sizing: border-box;  
+            position: relative; /* 设置相对定位 */  
+            left: -20px; /* 向左移动20像素，可以根据需要调整这个值 */  
+        }
+
+        #problems-faced h3 {  
+            text-align: left;  
+        }  
+        #problems-faced ul {  
+            list-style-type: none; /* 去除默认的列表样式 */  
+            padding: 0;  
+            margin: 0;  
+            /* display: grid; 使用CSS Grid布局   */
+            /* grid-template-columns: auto 1fr; 自动宽度的小标题和占据剩余空间的描述   */
+            /* gap: 10px 15px; 网格项之间的水平和垂直间距 */
+        }  
+        #problems-faced ul li {  
+            display: flex; /* 使用flexbox布局 */  
+            align-items: baseline; /* 确保内容在基线对齐 */  
+            text-align: left;
+            margin-bottom: 12px; /* 每个列表项之间的间距 */  
+        }  
+
+        #problems-faced ul li strong {  
+            flex: 0 0 auto; /* 小标题占据固定空间 */  
+            margin-right: 10px; /* 描述内容与标题之间的间距 */  
+            font-weight: bold; /* 确保strong标签仍然加粗显示 */  
+        }  
+        #problems-faced ul li span {  
+            flex: 1 1 auto; /* 描述内容占据剩余空间 */  
+        }
+  
+        /* 其他样式可以根据需要添加 */  
+    </style>        
+</head>        
+<body>        
+    <nav class="bg-gray-800 p-3">        
+        <div class="container mx-auto flex justify-between items-center">        
+            <a href="#" class="text-white text-2xl font-bold">视障人群无障碍出行</a>        
+            <ul class="list-reset flex">        
+                <li><a href="#team" class="text-white ml-4 hover:text-gray-400 smooth-scroll">团队介绍</a></li>        
+                <li class="relative dropdown">      
+                    <a href="#" class="text-white ml-4 hover:text-gray-400 caret-drop">项目提案 <span class="ml-2 caret-down"></span></a>      
+                    <ul class="absolute bg-gray-800 text-white mt-4 left-0 w-full dropdown-menu">      
+                        <li><a href="#proposal-background" class="block px-4 py-2 hover:bg-gray-700 smooth-scroll">项目背景</a></li>      
+                        <li><a href="#problems-faced" class="block px-4 py-2 hover:bg-gray-700 smooth-scroll">视障人群所面临的问题</a></li>      
+                        <li><a href="#project-importance" class="block px-4 py-2 hover:bg-gray-700 smooth-scroll">项目重要性</a></li>      
+                    </ul>      
+                </li>      
+                <li><a href="#survey" class="text-white ml-4 hover:text-gray-400 smooth-scroll">问卷调查数据分析</a></li>        
+                <li><a href="#interview" class="text-white ml-4 hover:text-gray-400 smooth-scroll">访谈内容分析</a></li>        
+                <li><a href="#contact" class="text-white ml-4 hover:text-gray-400 smooth-scroll">联系我们</a></li>        
+            </ul>        
+        </div>        
+    </nav>        
+      
+    <script>      
+        document.querySelectorAll('.caret-drop').forEach(caret => {      
+            caret.addEventListener('click', function(e) {      
+                e.preventDefault(); // 阻止默认链接行为  
+                var dropdown = this.nextElementSibling;  
+                // 隐藏其他下拉菜单  
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {  
+                    if (menu !== dropdown) {  
+                        menu.classList.remove('active');  
+                    }  
+                });  
+                // 切换当前下拉菜单的显示状态  
+                dropdown.classList.toggle('active');  
+            });      
+  
+            // 点击页面其他区域时隐藏所有下拉菜单  
+            document.addEventListener('click', function(e) {      
+                if (!e.target.closest('.caret-drop')) {      
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('active'));      
+                }      
+            });      
+        });  
+  
+        // 平滑滚动功能  
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {  
+            anchor.addEventListener('click', function(e) {  
+                e.preventDefault();  
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });  
+            });  
+        });  
+    </script>      
+      
+    <section class="hero">        
+        <h1>欢迎来到视障人群无障碍出行项目</h1>        
+        <p>我们致力于打造一个更加友好的出行环境。</p>        
+    </section>        
+        
+    <section id="team" class="bg-white py-12">  
+        <div class="container mx-auto"> <!-- 移除了text-center类 -->  
+            <h2 class="mb-6 text-center">团队介绍</h2> <!-- 如果标题仍然需要居中对齐 -->  
+            <p class="text-left">我们的团队由一群满怀热情与专业技能的学生构成，他们正投身于一项旨在优化视障人群出行环境的重要项目——开发一款视障人群无障碍出行APP。通过深度调研与方案的不断打磨，我们致力于为视障朋友们打造一个更为安全、便捷且人性化的出行体验。</p>  
+            <!-- 为段落添加了text-left类，但实际上在默认情况下，p元素是左对齐的，所以这个类可能是多余的，除非有其他CSS规则改变了它 -->  
+        </div>  
+    </section>     
+        
+    <section id="proposal" class="bg-gray-100 py-12">        
+        <div class="container mx-auto">        
+            <h2 class="mb-6">项目提案</h2>        
+            <div id="proposal-background">      
+                <h3>项目背景</h3>      
+                <p> 尽管许多主流软件已针对视障人群进行无障碍优化，但仍有大量应用未进行或未充分进行此类优化。视障人群由于身体限制，信息来源有限，难以获取这些无障碍软件。社会对视障人群的关注不足，市场规模小且投资回报周期长，导致无障碍技术的研发和推广缺乏足够的资金、人力和物力支持。此外，虽然国家已出台一系列关于信息无障碍的政策和标准，但这些政策和标准存在过于笼统、缺乏可操作性以及难以衔接和协调的问题，导致在实际应用中难以有效实施。同时，由于手机应用主要依赖屏幕交互，即使进行了无障碍优化，视障人群在出行等方面仍面临诸多挑战。</p>      
+            </div>      
+            <div id="problems-faced">  
+                <h3>视障人群所面临的问题</h3>  
+                <ul>  
+                    <li><strong>道路信息获取困难：</strong>视障人士无法直接观察道路情况，包括路况、交通信号灯、车辆与行人动态等。</li>  
+                    <li><strong>无障碍设施不完善：</strong>虽然现在很多城市都已经建设了盲道等无障碍设施，但是现实生活中盲道被占用、盲道不连续、盲道设计不合理等问题频频出现，而且大多数盲道在铺设完成过后便不会再进一步维护。</li>  
+                    <li><strong>公共交通设施不友好：</strong>公共交通是视障人群出行的主要交通工具之一，但是很多公共交通设施没有充分考虑到视障人士的需求，比如部分公交车报站系统不完善、地铁进出站提示不足等，大多数时候还需要借助他人的帮助。</li>  
+                </ul>  
+            </div>
+            <div id="project-importance">      
+                <h3>项目重要性</h3>      
+                <p>确保视障人士通过手机应用软件实现自由和独立的出行能力，是当代社会公平和国家保障人权的重要体现。这不仅能让视障人士享受时代和社会发展带来的便利，还能提升社会整体的安全性。应用软件集成的语音识别和环境感知技术可以帮助视障用户避开障碍物和潜在危险，提供实时的声音提示和反馈，从而提高他们的出行安全性，同时也保障了全体社会的安全出行。此外，视障人士的独立出行能力对他们的就业和消费有积极影响，进而为经济发展作出贡献。解决出行障碍不仅有助于提升个人生活水平，还能为社会整体创造更多的经济价值。同时，通过应用收集的数据，城市规划者和决策者可以更好地了解视障人士在出行中遇到的问题，从而推动公共交通和基础设施的改善，使城市环境更加友好和可达。</p>      
+            </div>      
+        </div>        
+    </section>        
+      
+    <section id="survey" class="bg-white py-12">        
+        <div class="container mx-auto text-center">        
+            <h2 class="mb-6">问卷调查数据分析</h2>  
+      
+            <!-- 第一个问题 -->  
+            <div class="mb-10">  
+                <h5 class="mb-4">Q1：根据您的现实生活情况，视障人员通常是如何获取交通道路信息的？</h5>  
+                <img src="images/Q5.png" alt="问题1的问卷调查数据分析" class="w-full max-w-lg mx-auto rounded">  
+                <p class="text-left">根据调查数据，视障人士获取交通道路信息的主要方式是记忆路线、依赖听觉、使用导盲犬这三种，选择使用辅助软件、口头询问他人的较少，由此可以看出视障人群还不适应使用辅助软件或者目前市面上的辅助软件并不能很好地帮助他们自主出行。</p>  
+            </div>  
+      
+            <!-- 第二个问题 -->  
+            <div class="mb-10">  
+                <h5 class="mb-4">Q2: 您觉得视障人员在获取道路信息时最大的困难是？</h5>  
+                <img src="images/Q6.png" alt="问题2的问卷调查数据分析" class="w-full max-w-lg mx-auto rounded">  
+                <p class="text-left">根据调查数据，视障人士在获取道路信息时遇到的主要困难有缺乏实时交通更新、信息不准确或者过时、公共场所内部导航困难、难以理解和使用辅助技术，由此可以看出一款具有高实时性、高准确性，且设计更为细致、更易上手操作的导航软件，对于视障人群而言，无疑是迫切需要的。</p>  
+            </div>  
+      
+            <!-- 第三个问题 -->  
+            <div class="mb-10">  
+                <h5 class="mb-4">Q3: 您认为哪些技术或者工具最能有效帮助视障人员获取交通信息？</h5>  
+                <img src="images/Q7.png" alt="问题3的问卷调查数据分析" class="w-full max-w-lg mx-auto rounded">  
+                <p class="text-left">根据调查数据，大多数受访者认为音频导航应用最能有效帮助视障人士获取交通信息，带有触觉反馈的智能手表或手环、公共交通的无障碍信息广播、社区志愿者或专业引导服务等也有一定作用，由此可以看出多元化的辅助手段对于提升视障人士的出行便利性和安全性具有重要意义，社会各界也应继续探索和创新更多实用的辅助技术和服务模式，以满足视障群体的实际需求。</p>  
+            </div>  
+
+            <div class="mb-10">  
+                <h5 class="mb-4">Q4: 您认为社会上对视障人员获取交通信息的困难的认识和支持是否足够？</h5>  
+                <img src="images/Q8.png" alt="问题3的问卷调查数据分析" class="w-full max-w-lg mx-auto rounded">  
+                <p class="text-left">根据调查数据，绝大多数受访者认为社会上对视障人群获取交通信息的困难的认识和支持一般或不够，由此可以看出尽管在辅助技术和无障碍设施建设方面取得了一定进展，但社会整体对于视障人士出行难点的认知和支持力度仍有待加强，我们应该进一步提升对视障人群无障碍出行需求的理解并积极帮助他们实现自主独立出行。</p>  
+            </div>  
+
+            <div class="mb-10">  
+                <h5 class="mb-4">Q5: 您对本区的无障碍环境建设评价？</h5>  
+                <img src="images/Q12.png" alt="问题3的问卷调查数据分析" class="w-full max-w-lg mx-auto rounded">  
+                <p class="text-left">根据调查数据，只有四分之一的受访者认为本区无障碍环境建设比较好，绝大多数选择了一般，由此可以看出本区的无障碍环境建设还有可以优化的地方，虽然我们在无障碍环境建设方面取得了一定成绩，但仍需不断努力，以满足包括视障人士在内的所有需要无障碍设施人群的需求。</p>  
+            </div>  
+
+            <div class="mb-10">  
+                <h5 class="mb-4">Q6: 您认为对于视障人群来说在生活中哪些无障碍服务最有必要？</h5>  
+                <img src="images/Q13.png" alt="问题3的问卷调查数据分析" class="w-full max-w-lg mx-auto rounded">  
+                <p class="text-left">根据调查数据，受访者认为建设无障碍设施和公共场所服务引导都是非常有必要的，信息平台无障碍浏览、公共场所无障碍服务服务系统的建设也很重要</p>  
+            </div>  
+
+            <div class="mb-10">  
+                <h5 class="mb-4">Q7: 您认为以下手机应用的功能和特点哪些对视障人群的出行更有帮助？</h5>  
+                <img src="images/Q15.png" alt="问题3的问卷调查数据分析" class="w-full max-w-lg mx-auto rounded">  
+                <p class="text-left">根据调查数据，受访者认为对视障人群出行最有帮助的功能是提前提示避障、语音提示行程信息（指示灯、途径站点等），其次为远程报警和无障碍地图，由此可以看出对于此类应用程序，功能重点应该落在感官反馈（听觉：语音、触觉：震动等）和信息实时更新</p>  
+            </div>  
+      
+            <!-- 可以继续添加更多问题 -->  
+      
+            <!-- 总结段落 -->  
+            <p>（以上是我们问卷调查的数据分析结果，感谢所有参与者的宝贵意见。）</p>  
+        </div>        
+    </section>     
+      
+    <section id="interview" class="bg-gray-100 py-12">      
+        <div class="container mx-auto text-center">      
+            <h2 class="mb-6">访谈内容分析</h2>      
+            <p>这是我们的访谈内容分析结果，详细描述了访谈对象的需求和建议。</p>      
+        </div>      
+    </section>      
+      
+    <section id="contact" class="bg-white py-12">      
+        <div class="container mx-auto text-center">      
+            <h2 class="mb-6">联系我们</h2>      
+            <form action="your-form-submit-url" method="POST" class="w-full max-w-lg mx-auto">      
+                <div class="mb-4">      
+                    <label for="name" class="block text-gray-700 mb-1">姓名</label>      
+                    <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500">      
+                </div>      
+                <div class="mb-4">      
+                    <label for="email" class="block text-gray-700 mb-1">邮箱</label>      
+                    <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500">      
+                </div>      
+                <div class="mb-4">      
+                    <label for="message" class="block text-gray-700 mb-1">留言</label>  
+                    <textarea id="message" name="message" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500" rows="4"></textarea>  
+                </div>  
+                <button type="submit" class="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600">提交</button>  
+            </form>  
+        </div>  
+    </section>  
+  
+    <footer class="bg-gray-800 py-6 text-center">  
+        <div class="container mx-auto">  
+            <p class="text-white mb-2">&copy; 2024 视障人群无障碍出行项目. 版权所有.</p>  
+            <p class="text-gray-400">免责声明: 本网站内容仅供参考，不构成任何专业建议。</p>  
+        </div>  
+    </footer>  
+</body>  
+</html>
