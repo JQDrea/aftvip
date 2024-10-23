@@ -1,0 +1,36 @@
+# netlify.toml example  
+  
+[build]  
+  # 指定构建命令（如果你的网站是静态文件，通常不需要构建命令）  
+  command = ""  
+  
+  # 指定发布目录（如果你的网站文件在根目录，则设置为"."）  
+  publish = "."  
+  
+  # 指定忽略的文件（可选）  
+  ignore = ["node_modules/", "package*.json", "*.log", "*.map"]  
+  
+[build.environment]  
+  # 可以在这里添加环境变量（可选）  
+  # HUGO_VERSION = "0.55.6"  
+  
+[[redirects]]  
+  # 你可以在这里添加重定向规则（可选）  
+  # from = "/old-page/*"  
+  # to = "/new-page/:splat"  
+  # status = 301  
+  
+[[headers]]  
+  # 你可以在这里添加自定义的HTTP头（可选）  
+  for = "/*"  
+    [headers.values]  
+      X-Frame-Options = "DENY"  
+      X-Content-Type-Options = "nosniff"  
+      Referrer-Policy = "origin-when-cross-origin"  
+  
+# 如果你使用的是HTML5的 History API，并且你的服务器需要处理单页应用的路由，  
+# 可以添加以下配置，以确保所有路由都返回index.html  
+[[redirects]]  
+  from = "/*"  
+  to = "/index.html"  
+  status = 200
