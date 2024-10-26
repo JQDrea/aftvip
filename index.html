@@ -79,7 +79,7 @@
         /* 设置所有h5标签的样式 */  
         h5 {  
             font-family: 'Georgia', serif; /* 字体 */  
-            font-size: 1.30rem; /* 字号 */  
+            font-size: 1.40rem; /* 字号 */  
             color: #1f1d1d; /* 字体颜色 */  
             text-align: left; /* 对齐方式，这里改为左对齐，你可以根据需要调整 */  
             margin-top: 1rem; /* 上边距 */  
@@ -131,7 +131,15 @@
         #problems-faced ul li span {  
             flex: 1 1 auto; /* 描述内容占据剩余空间 */  
         }
-  
+
+        .bullet-point::before {  
+            content: '•'; /* 使用CSS内容属性来添加项目符号 */  
+            font-size: 24px; /* 调整项目符号的大小 */  
+            color: #333; /* 设置项目符号的颜色 */  
+            display: inline-block; /* 确保项目符号是内联块级元素，以便可以调整其大小 */  
+            width: 1em; /* 设置项目符号的宽度，这里使用em单位相对于当前字体大小 */  
+            margin-right: 0.5em; /* 在项目符号和文本之间添加一些间距 */  
+        }
         /* 其他样式可以根据需要添加 */  
     </style>        
 </head>        
@@ -226,7 +234,8 @@
     <section id="survey" class="bg-white py-12">        
         <div class="container mx-auto text-center">        
             <h2 class="mb-6">问卷调查数据分析</h2>  
-      
+            <p class="text-left">我们向大众投放了团队拟定的关于视障人群无障碍出行的调查问卷，本次收集共获得12份调查问卷，其中有11人是18-30岁群体，1人为31-45岁；受访者学历均在本科及以上。下面是我们问卷调查的部分重要数据：</p>
+
             <!-- 第一个问题 -->  
             <div class="mb-10">  
                 <h5 class="mb-4">Q1：根据您的现实生活情况，视障人员通常是如何获取交通道路信息的？</h5>  
@@ -279,12 +288,102 @@
         </div>        
     </section>     
       
-    <section id="interview" class="bg-gray-100 py-12">      
-        <div class="container mx-auto text-center">      
-            <h2 class="mb-6">访谈内容分析</h2>      
-            <p>这是我们的访谈内容分析结果，详细描述了访谈对象的需求和建议。</p>      
-        </div>      
-    </section>      
+    <section id="interview" class="bg-gray-100 py-12">        
+        <div class="container mx-auto text-center">        
+            <h2 class="mb-6">访谈内容分析</h2>        
+            <p class="text-left">在此次访谈中，我们分别采访了四位视障人士，他们在视力方面的障碍分别是红绿色盲、轻度弱视、重度弱视和失明。在对受访者进行简短的介绍和询问后，我们围绕“如何使用手机应用改善视障人群无障碍出行”展开了访谈。下面是访谈内容的总结分析：</p>
+            <div style="margin-bottom: 24px;"></div> <!-- 增加间距 -->
+
+            <!-- 第一大条 -->  
+            <h4>一、道路信息方面</h4>  
+            <p class="text-left">  首先，四位受访者分享了他们在出行中的真实体验。包括独自外出、道路信息获取、导航软件使用、公园和购物中心的无障碍标识，以及社交媒体获取旅行建议的看法。</p>
+            <ol>  
+                <li>  
+                    <h5>1. 独自外出的频率与难点</h5>  
+                    <!-- <p class="text-left">受访者对独自外出的态度和经历因视力障碍的程度不同而各不相同。患有红绿色盲和轻度弱视的受访者表示可以独自出行，习惯乘坐地铁，并且表示出行过程中并没有遇到太大的不便。然而，重度弱视和失明的受访者表示会依赖于家人和朋友陪同，独自出行时会存在对环境的感知的问题，尤其是道路施工的障碍物识别和上下楼梯的安全性成问题。这显示出视障人群仍需要更多的外部辅助或改善环境设计。</p>   -->
+                    <p class="text-left bullet-point">红绿色盲和轻度弱视者能独自出行，主要依赖地铁，无明显不便。</p>
+                    <p class="text-left bullet-point">重度弱视和失明者依赖陪同，独自出行时面临环境感知问题，尤其是障碍物识别和楼梯安全。</p>
+                </li>  
+                <li>  
+                    <h5>2. 获取道路信息的方式</h5>  
+                    <p class="text-left bullet-point">视障者依赖公共环境中的音频提示和他人的反应来了解红绿灯状态。</p>
+                    <p class="text-left bullet-point">他们希望导航软件提供及时道路信息识别功能。</p>
+                </li>  
+                <li>  
+                    <h5>3. 导航软件的使用体验</h5>  
+                    <p class="text-left bullet-point">语音提示功能是受访者普遍依赖的工具。</p>
+                    <p class="text-left bullet-point">需要改进：增加红绿灯提醒、提前提供更远的道路信息、更详细的道路环境描述。</p>
+                    <p class="text-left bullet-point">部分受访者对语音提示信息不够明确和提前表示不满。</p>
+                </li>  
+                <li>  
+                    <h5>4. 道路临时改道和施工情况的应对</h5>  
+                    <p class="text-left bullet-point">受访者反映道路施工信息获取存在延迟且具有局限性，无障碍信息系统未能及时传达临时变化信息。</p>
+                </li>  
+                <li>  
+                    <h5>5. 在复杂公共场所的导航体验</h5>  
+                    <p class="text-left bullet-point">视障者在公园、购物中心等复杂场所对无障碍标识的依赖大，但完全失明和重度弱视者难以从视觉标识中获取有用信息。</p>
+                    <p class="text-left bullet-point">建议公共场所提供更多音频或触觉提示来辅助导航。</p>
+                </li>  
+                <li>  
+                    <h5>6. 社交媒体与在线社区的使用体验</h5>  
+                    <p class="text-left bullet-point">社交媒体在视障者出行规划中有潜力，但内容杂乱且未完全考虑视障者需求。</p>
+                    <p class="text-left bullet-point">建议社交平台和社区设计更加细致、精准的信息推送。</p>
+                </li>  
+
+                <div style="margin-bottom: 24px;"></div> <!-- 增加间距 --> 
+            </ol>  
+              
+            <!-- 第二大条 -->  
+            <h4>二、无障碍设施方面</h4>  
+            <ol>  
+                <li>  
+                    <h5>1. 公共场所的入口的无障碍改造</h5>  
+                    <!-- <p class="text-left">受访者描述了他们目前使用的手机应用以及这些应用在其日常生活中的作用。</p>   -->
+                    <p class="text-left bullet-point">主要问题：坡道覆盖率低且常被占用。</p>
+                    <p class="text-left bullet-point">解决方案建议：加强管控和推行本地政策。</p>
+                </li>  
+                <li>  
+                    <h5>2. 盲道问题</h5>  
+                    <p class="text-left bullet-point">主要问题：盲道被占用和普及率不高。</p>
+                    <p class="text-left bullet-point">影响：对视障人群出行造成不便，可能导致其减少出行。</p>
+                </li>  
+                <li>  
+                    <h5>3. 信息无障碍设备</h5>  
+                    <p class="text-left bullet-point">现状：覆盖率不高，但受访者需求高。</p>
+                    <p class="text-left bullet-point">建议：政府与有关企业应推进其发展，增加与视障人群的交互，并考虑在已有设备上进行改造。</p>
+                    <div style="margin-bottom: 24px;"></div> <!-- 增加间距 --> 
+                </li>  
+            </ol>  
+              
+            <!-- 第三大条 -->  
+            <h4>三、公共交通设施方面</h4>  
+            <ol>  
+                <li>  
+                    <h5>1. 公共交通出行频率</h5>  
+                    <p class="text-left bullet-point">半数受访者使用公共交通频率不高，倾向于简单出行路线。</p>
+                    <p class="text-left bullet-point">生理缺陷可能导致自卑情绪，希望发展信息无障碍设备。</p>
+                </li>  
+                <li>  
+                    <h5>2. 公共交通广播系统</h5>  
+                    <p class="text-left bullet-point">受访者偶尔坐过站，主要因环境吵闹或站名不符。</p>
+                    <p class="text-left bullet-point">但这些问题正常人也会遇到，所以他们对公共交通的广播系统没有意见。</p>
+                </li>  
+                <li>  
+                    <h5>3. 公共交通无障碍设施</h5>  
+                    <p class="text-left bullet-point">受访者基本都表示公共交通上的无障碍设施没有什么问题，说明目前公共交通的无障碍设施还是比较齐全的，但是也不排除是视障人群使用公共交通的频率低的原因。</p>
+                    <div style="margin-bottom: 24px;"></div> <!-- 增加间距 --> 
+                </li>  
+                <li>  
+                    <h5>4. 公共交通购票与换乘</h5>  
+                    <p class="text-left bullet-point">受访者表示目前公共交通的购票与检票对他们来说也比较方便，有线上购票等多种途径可以帮助他们解决问题，而且公共交通的针对视障人群的换乘服务也较为齐全，说明政府对保障视障人群的出行也是非常重视。</p>
+                    <div style="margin-bottom: 24px;"></div> <!-- 增加间距 --> 
+                </li>  
+            </ol>  
+            <div style="margin-bottom: 24px;"></div> <!-- 增加间距 --> 
+            <!-- 总结段落 -->  
+            <p class="text-left">最后，关于可以为视障人群动态获取路况信息，并且可以为他们出行提供实时导航的应用软件，他们都希望可以有这样的软件进入他们的生活，更加方便他们的出行。</p>  
+        </div>        
+    </section>   
       
     <section id="contact" class="bg-white py-12">      
         <div class="container mx-auto text-center">      
